@@ -1,0 +1,29 @@
+data:
+  ground_truth: data/poses_vo_coord.txt
+  visual_odometry_estimate: data/09_vo.txt
+  inertial_estimates: data/imu_09.npy
+
+transformation_matrix:
+  kitti_velodyne_to_cam: transformation_matrix/calib_velo_to_cam.txt
+  kitti_imu_to_velodyne: transformation_matrix/calib_imu_to_velo.txt
+
+utility:
+  state: False
+  visual_odometry_drop_out: 0 # random
+  imu_drop_out: 0   # random
+  use_ground_truth: False
+  ground_truth_drop_out: 0  # random
+
+variance:
+  imu_acceleration: 0.10
+  imu_angular_velocity: 0.10
+  ground_truth: 0.10
+  visual_odometry: 0.10
+
+results:
+  plot: True
+  evaluate_kitti_metrics: True
+  save_plot: False
+  save_data: True
+  path_to_save: results_srs
+  save_kitti_format: true
